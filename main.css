@@ -1,0 +1,382 @@
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Oswald&display=swap");
+@font-face {
+  font-family: "Silk Serif";
+  src: url("./fonts/Silk_Serif/Silk Serif Medium.otf");
+}
+@font-face {
+  font-family: "Minion Condensed";
+  src: url("./fonts/Minion Condensed/Minion Condensed.otf");
+}
+@font-face {
+  font-family: "Segoe Ui";
+  src: url("./fonts/segoe-ui-4-cufonfonts-webfont/Segoe UI.woff");
+}
+@font-face {
+  font-family: "Leelaw Ui";
+  src: url("./fonts/leelawadee-ui/LeelawUI.ttf");
+}
+@font-face {
+  font-family: "VVE Giallo";
+  src: url("./fonts/vve-giallo/VVE-Giallo-Bold.ttf");
+}
+@font-face {
+  font-family: "Suprema";
+  src: url("./fonts/Suprema-AZfontNET/Artegra - Suprema Thin.ttf");
+}
+@font-face {
+  font-family: "Noir Pro";
+  src: url("./fonts/Noir-pro/NoirPro-Light.otf");
+}
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+}
+
+.content {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 6em 0;
+}
+
+.section-header {
+  font-family: "Oswald";
+  font-weight: lighter;
+  font-size: 1.85em;
+  text-transform: uppercase;
+  margin-top: 0;
+}
+.section-header::after {
+  content: "";
+  display: block;
+  height: 5px;
+  width: 150px;
+  margin: 5px 0 0 -25px;
+  background-color: #4E4747;
+}
+
+.first-view {
+  height: 100vh;
+  background: black;
+}
+.first-view__informations {
+  height: 100%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.first-view__informations::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0.125;
+  background: url("./graphics/laptop-with-note-on-the-desk.jpg") center center no-repeat;
+  background-size: cover;
+}
+.first-view__name {
+  font-family: "Silk Serif";
+  font-size: 2.5em;
+  font-weight: 300;
+  margin: 0.25em 0;
+  text-align: center;
+}
+.first-view__profession {
+  font-family: sans-serif;
+  font-size: 0.75em;
+  margin: 5px;
+  letter-spacing: 1px;
+  color: #ECECEC;
+  font-weight: 200;
+}
+
+.about-me__header {
+  margin-bottom: 1.25em;
+}
+.about-me__text {
+  width: 90%;
+  margin: 0 auto;
+}
+.about-me__line {
+  color: #5B5A5A;
+  font-family: "Minion Condensed";
+  padding: 0 1em;
+}
+
+.resume {
+  background-color: #272727;
+  position: relative;
+}
+.resume::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-right: 240px solid #272727;
+  border-top: 120px solid white;
+}
+.resume::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-right: 240px solid white;
+  border-top: 120px solid #272727;
+}
+.resume__education {
+  margin-top: 100px;
+}
+.resume__row, .resume__row--collapsed {
+  display: flex;
+  padding: 15px 0;
+}
+.resume__row--collapsed .item__time, .resume__row--collapsed .item__sub-header, .resume__row--collapsed .item__text {
+  display: none;
+}
+.resume__header {
+  color: white;
+}
+.resume__header::after {
+  background-color: white;
+}
+.resume__group-header {
+  flex: 7;
+  font-family: "Segoe Ui";
+  font-size: 1.1em;
+  text-align: center;
+  color: white;
+  padding: 8px 0;
+  border: 2px solid white;
+  position: relative;
+}
+.resume__date {
+  margin-top: 20px;
+  color: white;
+  font-size: 0.7em;
+  font-family: "Leelaw Ui";
+  flex: 1;
+  display: flex;
+  height: 40px;
+  justify-content: end;
+  align-items: center;
+}
+.resume__items {
+  width: 90%;
+}
+.resume__item {
+  flex: 7;
+  border-radius: 10px;
+  font-family: "Leelaw Ui";
+  background-color: white;
+}
+.resume__icon, .resume__icon--minus-button, .resume__icon--plus-button, .resume__icon--ask-button {
+  flex: 1;
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+}
+.resume__icon--ask-button {
+  align-self: center;
+  background: url("./icons/Info Button.svg") no-repeat center;
+  background-size: contain;
+}
+.resume__icon--plus-button {
+  margin-top: 20px;
+  cursor: pointer;
+  background: url("./icons/Plus Button.svg") no-repeat center;
+  background-size: contain;
+}
+.resume__icon--minus-button {
+  margin-top: 20px;
+  cursor: pointer;
+  background: url("./icons/Minus Button.svg") no-repeat center;
+  background-size: contain;
+}
+
+.item__container {
+  padding: 20px 60px;
+}
+.item__header {
+  font-size: 1.1em;
+}
+.item__time {
+  font-size: 0.7em;
+  margin: 10px 0 20px;
+}
+.item__sub-header {
+  font-size: 0.95em;
+}
+.item__text {
+  margin-top: 10px;
+  font-size: 0.8em;
+}
+
+.projects__header {
+  max-width: 1080px;
+  padding-top: calc(6em / 2);
+  margin: 0 auto;
+}
+.projects__background--divider {
+  background: linear-gradient(180deg, white 50%, #272727 50%);
+}
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  max-width: 1150px;
+  padding: 3em 0;
+}
+.projects__row-break {
+  flex-basis: 100%;
+  height: 0;
+}
+.projects__space {
+  background-color: #272727;
+  height: 10vh;
+}
+.projects__item {
+  padding: 60px 0 80px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.projects__item::before {
+  content: "";
+  background: #e4c68b;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  transition: all 0.7s ease-out;
+  z-index: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+.projects__item:hover::before {
+  width: 100%;
+  opacity: 1;
+  visibility: visible;
+}
+.projects__item:hover .project__link::after {
+  margin-left: 25px;
+}
+.projects__item .project__text {
+  align-self: center;
+}
+.projects__item--stock-exchange {
+  background-color: #C3C3C3;
+  grid-column: 1/3;
+}
+.projects__item--stock-exchange [class*=icon] {
+  margin-right: calc(30px * 1.5);
+}
+.projects__item--blog {
+  background-color: #DCDCDC;
+  grid-column: 3/4;
+  align-content: center;
+}
+.projects__item--blog [class*=icon] {
+  margin-left: 30px;
+}
+.projects__item--amadventure {
+  background-color: #DCDCDC;
+  grid-column: 1/2;
+}
+.projects__item--amadventure [class*=icon] {
+  margin-right: 30px;
+}
+.projects__item--hosting {
+  background-color: #EBECEC;
+  grid-column: 2/4;
+}
+.projects__item--hosting [class*=icon] {
+  margin-right: calc(30px * 1.5);
+}
+
+.project__header {
+  position: relative;
+  z-index: 1;
+  font-family: "VVE Giallo";
+}
+.project__sub-header {
+  position: relative;
+  z-index: 1;
+  font-family: "Suprema";
+  margin-top: -10px;
+}
+.project__link {
+  position: relative;
+  z-index: 1;
+  font-family: "Suprema";
+  text-transform: uppercase;
+  font-size: 0.6em;
+  margin-top: 15px;
+  position: relative;
+}
+.project__link::after {
+  content: "";
+  width: 25px;
+  height: 10px;
+  background: url("./icons/right-arrow-long.png") center center no-repeat;
+  background-size: contain;
+  height: 30px;
+  position: absolute;
+  margin: -5px 0 0 10px;
+  transition: margin 0.4s ease-out;
+}
+.project__link a {
+  color: black;
+  text-decoration: none;
+}
+.project__icon, .project__icon--hosting, .project__icon--amadventure, .project__icon--blog, .project__icon--stock-exchange {
+  position: relative;
+  z-index: 1;
+  height: 120px;
+  width: 120px;
+}
+.project__icon--stock-exchange {
+  background: url("./icons/bars-golden-bg.png") center center no-repeat;
+  background-size: contain;
+}
+.project__icon--blog {
+  background: url("./icons/blogging-golden-bg.png") center center no-repeat;
+  background-size: contain;
+}
+.project__icon--amadventure {
+  background: url("./icons/treasure-map-golden-bg.png") center center no-repeat;
+  background-size: contain;
+}
+.project__icon--hosting {
+  background: url("./icons/database-golden-bg.png") center center no-repeat;
+  background-size: contain;
+}
+
+.technologies__header {
+  clip-path: polygon(10% 0px, 90% 0px, 83% 100%, 17% 100%);
+  height: 130px;
+  background-color: #272727;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+.technologies__header--text {
+  color: white;
+  font-family: "Noir Pro";
+  margin: 0;
+  font-size: 2.2em;
+}
+
+/*# sourceMappingURL=main.css.map */

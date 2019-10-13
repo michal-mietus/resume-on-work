@@ -1,0 +1,10 @@
+*.zip
+*.rar
+*.map
+.sass-cache
+
+/font-screens
+/mockups
+
+inspirations.txt
+Design-exported.png
