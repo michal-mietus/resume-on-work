@@ -40,6 +40,10 @@
 
 $max-width: 1080px;
 $content-verticall-padding: 6em;
+$dark-bg-color: #272727;
+$light-bg-color: #4b4848;
+$white-bg-color: #fff;
+
 
 * {
     box-sizing: border-box;
@@ -139,7 +143,7 @@ html, body {
 $date-and-icon-top-margin: 20px;
 
 .resume {
-    background-color: #272727;
+    background-color: $dark-bg-color;
     position: relative;
 
     &::before {
@@ -147,7 +151,7 @@ $date-and-icon-top-margin: 20px;
         position: absolute;
         top: 0;
         left: 0;
-        border-right: 240px solid #272727;
+        border-right: 240px solid $dark-bg-color;
         border-top: 120px solid white;
     }
 
@@ -157,7 +161,7 @@ $date-and-icon-top-margin: 20px;
         bottom: 0;
         right: 0;
         border-right: 240px solid white;
-        border-top: 120px solid #272727;
+        border-top: 120px solid $dark-bg-color;
     }
 
     &__education {
@@ -279,6 +283,17 @@ $date-and-icon-top-margin: 20px;
     }
 }
 
+$project-icon-description-margin: 30px;
+$mobile-project-width: 996px;
+
+@mixin mobile-project() {
+    @media (max-width: $mobile-project-width) {
+        grid-column: 1 / 4;
+        width: 65%;
+        margin: 0 auto;
+    }
+}
+
 .projects {
 
     &__header {
@@ -288,7 +303,7 @@ $date-and-icon-top-margin: 20px;
     }
 
     &__background--divider {
-        background: linear-gradient(180deg, white 50%, #272727 50%);
+        background: linear-gradient(180deg, white 50%, #4b4848 50%);
     }
 
     &__grid {
@@ -305,7 +320,7 @@ $date-and-icon-top-margin: 20px;
     }
 
     &__space {
-        background-color: #272727;
+        background-color: #4b4848;
         height: 10vh;
     }
 
@@ -346,39 +361,58 @@ $date-and-icon-top-margin: 20px;
         }
 
         &--stock-exchange {
+            @include mobile-project();
+
             background-color: #C3C3C3;
             grid-column: 1 / 3;
 
             [class*="icon"] {
-                margin-right: calc(30px * 1.5);
+                margin-right: calc(#{$project-icon-description-margin} * 1.5);
             }
         }
 
         &--blog {
+            @include mobile-project();
+
             background-color: #DCDCDC;
             grid-column: 3 / 4;
             align-content: center;
 
             [class*="icon"] {
-                margin-left: 30px;
+                margin-left: #{$project-icon-description-margin};
             }
         }
 
         &--amadventure {
+            @include mobile-project();
+            @media (max-width: $mobile-project-width) {
+                background-color: #EBECEC;
+            }
+
             background-color: #DCDCDC;
             grid-column: 1 / 2;
             
             [class*="icon"] {
-                margin-right: 30px;
+                margin-right: #{$project-icon-description-margin};
             }
         }
 
         &--hosting {
+            @include mobile-project();
+            @media (max-width: $mobile-project-width) {
+                background-color: #DCDCDC;
+                flex-direction: row-reverse;
+                
+                div[class*="icon"] {
+                    margin: 0 0 0 calc(#{$project-icon-description-margin} * 1.5);
+                }
+            }
+
             background-color: #EBECEC;
             grid-column: 2 / 4;
 
             [class*="icon"] {
-                margin-right: calc(30px * 1.5);
+                margin-right: calc(#{$project-icon-description-margin} * 1.5);
             }
         }
     }
@@ -459,11 +493,15 @@ $date-and-icon-top-margin: 20px;
     }
 }
 
+$two-columns-icons: 339px;
+
 .technologies {
+    background-color: $dark-bg-color;
+
     &__header {
         clip-path: polygon(10% 0px, 90% 0px, 83% 100%, 17% 100%);
         height: 130px;
-        background-color: #272727;
+        background-color: $light-bg-color;
         display: flex;
         align-content: center;
         align-items: center;
@@ -474,6 +512,45 @@ $date-and-icon-top-margin: 20px;
             font-family: 'Noir Pro';
             margin: 0;
             font-size: 2.2em;
+        }
+    }
+
+    &__content {
+        padding: 80px 0;
+    }
+
+    &__icons {
+        width: 65%;
+        max-width: 650px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        @media (min-width: $two-columns-icons) {
+            justify-content: space-between;
+        }
+    }
+
+    &__icon {
+        margin-top: 50px;
+        padding: 10px;
+        $number-of-columns: 5;
+        flex-basis: calc(100% / #{$number-of-columns});
+        flex-grow: 0;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__image {
+        max-width: 90px;
+        object-fit: contain;
+        opacity: .3;
+        transition: opacity .2s;
+        
+        &:hover {
+            opacity: 1;
         }
     }
 }
