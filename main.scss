@@ -39,6 +39,7 @@
 }
 
 $max-width: 1080px;
+$desktop-view-min-width: 560px;
 $content-verticall-padding: 6em;
 $dark-bg-color: #272727;
 $light-bg-color: #4b4848;
@@ -58,7 +59,11 @@ html, body {
 .content {
     max-width: $max-width;
     margin: 0 auto;
-    padding: $content-verticall-padding 0;
+    padding: 2.5em 0;
+
+    @media (min-width: $desktop-view-min-width) {
+        padding: $content-verticall-padding 0;
+    }
 }
 
 .section-header {
@@ -67,14 +72,25 @@ html, body {
     font-size: 1.85em;
     text-transform: uppercase;
     margin-top: 0;
+    text-align: center;
+    margin-bottom: 40px;
+
+    @media (min-width: $desktop-view-min-width) {
+        text-align: left;
+    }
 
     &::after {
         content: "";
         display: block;
         height: 5px;
-        width: 150px;
-        margin: 5px 0 0 -25px;
         background-color: #4E4747;
+        width: 65%;
+        margin: 0 auto;
+
+        @media (min-width: $desktop-view-min-width) {
+            width: 150px;
+            margin: 5px 0 0 -25px;
+        }
     }
 }
 
@@ -136,7 +152,11 @@ html, body {
     &__line {
         color: #5B5A5A;
         font-family: 'Minion Condensed';
-        padding: 0 1em;
+        padding: 0 5px;
+
+        @media (min-width: $desktop-view-min-width) {
+            padding: 0 1em;
+        }
     }
 }
 
@@ -151,8 +171,13 @@ $date-and-icon-top-margin: 20px;
         position: absolute;
         top: 0;
         left: 0;
-        border-right: 240px solid $dark-bg-color;
-        border-top: 120px solid white;
+        border-right: 80px solid $dark-bg-color;
+        border-top: 30px solid white;
+
+        @media (min-width: $desktop-view-min-width) {
+            border-right: 240px solid $dark-bg-color;
+            border-top: 120px solid white;
+        }
     }
 
     &::after {
@@ -160,8 +185,13 @@ $date-and-icon-top-margin: 20px;
         position: absolute;
         bottom: 0;
         right: 0;
-        border-right: 240px solid white;
-        border-top: 120px solid $dark-bg-color;
+        border-right: 100px solid white;
+        border-top: 60px solid #272727;
+
+        @media (min-width: $desktop-view-min-width) {
+            border-right: 240px solid white;
+            border-top: 120px solid $dark-bg-color;
+        }
     }
 
     &__education {
@@ -214,17 +244,35 @@ $date-and-icon-top-margin: 20px;
         height: 40px;
         justify-content: end;
         align-items: center;
+
+        &--desktop {
+            display: none;
+
+            @media (min-width: $desktop-view-min-width) {
+                display: inline-block;
+            }
+        }
     }
 
     &__items {
         width: 90%;
+        margin: 0 auto;
+
+        @media (min-width: $desktop-view-min-width) {
+            margin: auto;
+        }
     }
 
     &__item {
         flex: 7;
-        border-radius: 10px;
         font-family: 'Leelaw Ui';
         background-color: white;
+        border: 2px solid #ededed;
+
+        @media (min-width: $desktop-view-min-width) {
+            border: none;
+            border-radius: 10px;
+        }
     }
 
     &__icon {
@@ -256,21 +304,55 @@ $date-and-icon-top-margin: 20px;
             background: url('./icons/Minus\ Button.svg') no-repeat center;
             background-size: contain;
         }
+
+        &--desktop {
+            display: none;
+
+            @media (min-width: $desktop-view-min-width) {
+                display: inline-block;
+            }
+        }
+
+        &--mobile {
+            @media (min-width: $desktop-view-min-width) {
+                display: none;
+            }
+        }
     }
 }
 
 .item {
     &__container {
-        padding: 20px 60px;
+        padding: 10px 25px;
+
+        @media (min-width: $desktop-view-min-width) {
+            padding: 20px 60px;
+        }
     }
 
     &__header {
         font-size: 1.1em;
+        display: grid;
+        grid-template-columns: 90% 1fr;
     }
     
     &__time {
         font-size: .7em;
         margin: 10px 0 20px;
+        display: none;
+
+        @media (min-width: $desktop-view-min-width) {
+            display: block;
+        }
+
+        &--mobile.item__time {
+            display: block;
+            margin: 10px 0;
+
+            @media (min-width: $desktop-view-min-width) {
+                display: none;
+            }
+        }
     }
 
     &__sub-header {
@@ -502,6 +584,7 @@ $two-columns-icons: 339px;
         clip-path: polygon(10% 0px, 90% 0px, 83% 100%, 17% 100%);
         height: 130px;
         max-width: 1150px;
+        margin: 0 auto;
         background-color: $light-bg-color;
         display: flex;
         align-content: center;
