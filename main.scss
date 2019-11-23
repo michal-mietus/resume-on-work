@@ -469,25 +469,25 @@ $mobile-project-width: 996px;
 
         &--stock-exchange {
             @extend .project__icon;
-            background: url('./icons/bars-golden-bg.png') center center no-repeat;
+            background: url('./graphics/projects/bars-golden-bg.png') center center no-repeat;
             background-size: contain;
         }
 
         &--blog {
             @extend .project__icon;
-            background: url('./icons/blogging-golden-bg.png') center center no-repeat;
+            background: url('./graphics/projects/blogging-golden-bg.png') center center no-repeat;
             background-size: contain;
         }
 
         &--amadventure {
             @extend .project__icon;
-            background: url('./icons/treasure-map-golden-bg.png') center center no-repeat;
+            background: url('./graphics/projects/treasure-map-golden-bg.png') center center no-repeat;
             background-size: contain;
         }
 
         &--hosting {
             @extend .project__icon;
-            background: url('./icons/database-golden-bg.png') center center no-repeat;
+            background: url('./graphics/projects/database-golden-bg.png') center center no-repeat;
             background-size: contain;
         }
     }
@@ -501,6 +501,7 @@ $two-columns-icons: 339px;
     &__header {
         clip-path: polygon(10% 0px, 90% 0px, 83% 100%, 17% 100%);
         height: 130px;
+        max-width: 1150px;
         background-color: $light-bg-color;
         display: flex;
         align-content: center;
