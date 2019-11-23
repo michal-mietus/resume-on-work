@@ -44,7 +44,7 @@ html, body {
   margin: 0 auto;
   padding: 2.5em 0;
 }
-@media (min-width: 560px) {
+@media (min-width: 820px) {
   .content {
     padding: 6em 0;
   }
@@ -59,7 +59,7 @@ html, body {
   text-align: center;
   margin-bottom: 40px;
 }
-@media (min-width: 560px) {
+@media (min-width: 820px) {
   .section-header {
     text-align: left;
   }
@@ -72,7 +72,7 @@ html, body {
   width: 65%;
   margin: 0 auto;
 }
-@media (min-width: 560px) {
+@media (min-width: 820px) {
   .section-header::after {
     width: 150px;
     margin: 5px 0 0 -25px;
@@ -131,7 +131,7 @@ html, body {
   font-family: "Minion Condensed";
   padding: 0 5px;
 }
-@media (min-width: 560px) {
+@media (min-width: 820px) {
   .about-me__line {
     padding: 0 1em;
   }
@@ -149,7 +149,7 @@ html, body {
   border-right: 80px solid #272727;
   border-top: 30px solid white;
 }
-@media (min-width: 560px) {
+@media (min-width: 820px) {
   .resume::before {
     border-right: 240px solid #272727;
     border-top: 120px solid white;
@@ -163,7 +163,7 @@ html, body {
   border-right: 100px solid white;
   border-top: 60px solid #272727;
 }
-@media (min-width: 560px) {
+@media (min-width: 820px) {
   .resume::after {
     border-right: 240px solid white;
     border-top: 120px solid #272727;
@@ -209,7 +209,7 @@ html, body {
 .resume__date--desktop {
   display: none;
 }
-@media (min-width: 560px) {
+@media (min-width: 820px) {
   .resume__date--desktop {
     display: inline-block;
   }
@@ -218,7 +218,7 @@ html, body {
   width: 90%;
   margin: 0 auto;
 }
-@media (min-width: 560px) {
+@media (min-width: 820px) {
   .resume__items {
     margin: auto;
   }
@@ -229,7 +229,7 @@ html, body {
   background-color: white;
   border: 2px solid #ededed;
 }
-@media (min-width: 560px) {
+@media (min-width: 820px) {
   .resume__item {
     border: none;
     border-radius: 10px;
@@ -261,12 +261,12 @@ html, body {
 .resume__icon--desktop {
   display: none;
 }
-@media (min-width: 560px) {
+@media (min-width: 820px) {
   .resume__icon--desktop {
     display: inline-block;
   }
 }
-@media (min-width: 560px) {
+@media (min-width: 820px) {
   .resume__icon--mobile {
     display: none;
   }
@@ -275,7 +275,7 @@ html, body {
 .item__container {
   padding: 10px 25px;
 }
-@media (min-width: 560px) {
+@media (min-width: 820px) {
   .item__container {
     padding: 20px 60px;
   }
@@ -290,7 +290,7 @@ html, body {
   margin: 10px 0 20px;
   display: none;
 }
-@media (min-width: 560px) {
+@media (min-width: 820px) {
   .item__time {
     display: block;
   }
@@ -299,7 +299,7 @@ html, body {
   display: block;
   margin: 10px 0;
 }
-@media (min-width: 560px) {
+@media (min-width: 820px) {
   .item__time--mobile.item__time {
     display: none;
   }
