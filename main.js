@@ -1,6 +1,7 @@
+processArray('Web Developer'.split(''));
+
 window.onload = () => {
     addCollpaseResumeButtonsFunctionality();
-    processArray('Web Developer'.split(''));
 }
 
 window.onscroll = (event) => {
