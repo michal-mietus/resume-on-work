@@ -41,7 +41,6 @@ const isMobileButton = (buttonClasses) => {
     var isMobile = false;
 
     buttonClasses.forEach(function(buttonClass) {
-        console.log(buttonClass);
         if (buttonClass.includes('--mobile')) {
             isMobile = true;
         }
