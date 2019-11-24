@@ -8,8 +8,6 @@ window.onload = () => {
 }
 
 const collapseResumeItem = (clickEvent) => {
-    // TODO extend for mobile buttons
-
     const plusButtonClassName = 'resume__icon--plus-button';
     const minusButtonClassName = 'resume__icon--minus-button';
 
