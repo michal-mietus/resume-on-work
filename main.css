@@ -654,36 +654,87 @@ html, body {
   animation: rollOutHeaderUnderline 0.8s cubic-bezier(0.5, 0.96, 0.52, 0.96);
 }
 
+/** TODO DRY, two different animations depending on mobile/desktop resolution */
 @-webkit-keyframes rollOutHeaderUnderline {
   0% {
     width: 0;
+    opacity: 0;
   }
   100% {
     width: 65%;
+    opacity: 1;
   }
 }
 @-moz-keyframes rollOutHeaderUnderline {
   0% {
     width: 0;
+    opacity: 0;
   }
   100% {
     width: 65%;
+    opacity: 1;
   }
 }
 @-o-keyframes rollOutHeaderUnderline {
   0% {
     width: 0;
+    opacity: 0;
   }
   100% {
     width: 65%;
+    opacity: 1;
   }
 }
 @keyframes rollOutHeaderUnderline {
   0% {
     width: 0;
+    opacity: 0;
   }
   100% {
     width: 65%;
+    opacity: 1;
+  }
+}
+@media (min-width: 820px) {
+  @-webkit-keyframes rollOutHeaderUnderline {
+    0% {
+      width: 0;
+      opacity: 0;
+    }
+    100% {
+      width: 150px;
+      opacity: 1;
+    }
+  }
+  @-moz-keyframes rollOutHeaderUnderline {
+    0% {
+      width: 0;
+      opacity: 0;
+    }
+    100% {
+      width: 150px;
+      opacity: 1;
+    }
+  }
+  @-o-keyframes rollOutHeaderUnderline {
+    0% {
+      width: 0;
+      opacity: 0;
+    }
+    100% {
+      width: 150px;
+      opacity: 1;
+    }
+  }
+  @keyframes rollOutHeaderUnderline {
+    0% {
+      width: 0;
+      opacity: 0;
+    }
+    100% {
+      width: 150px;
+      opacity: 1;
+    }
   }
 }
 .resume__row--collapsed .item__collapsing-items {

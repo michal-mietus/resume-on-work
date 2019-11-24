@@ -724,23 +724,66 @@ $two-columns-icons: 339px;
     }
 }
 
-
+/** TODO DRY, two different animations depending on mobile/desktop resolution */
 
 @-webkit-keyframes rollOutHeaderUnderline {
-    0%   { width: 0; }
-    100% { width: 65%; }
+    0%   { width: 0; opacity: 0; }
+    100% { 
+        width: 65%; 
+        opacity: 1; 
+    }
 }
 @-moz-keyframes rollOutHeaderUnderline {
-    0%   { width: 0; }
-    100% { width: 65%; }
+    0%   { width: 0; opacity: 0; }
+    100% { 
+        width: 65%; 
+        opacity: 1; 
+    }
 }
 @-o-keyframes rollOutHeaderUnderline {
-    0%   { width: 0; }
-    100% { width: 65%; }
+    0%   { width: 0; opacity: 0; }
+    100% { 
+        width: 65%; 
+        opacity: 1; 
+    }
 }
 @keyframes rollOutHeaderUnderline {
-    0%   { width: 0; }
-    100% { width: 65%; }
+    0%   { width: 0; opacity: 0; }
+    100% { 
+        width: 65%; 
+        opacity: 1; 
+    }
+}
+
+@media (min-width: $desktop-view-min-width) {
+    @-webkit-keyframes rollOutHeaderUnderline {
+        0%   { width: 0; opacity: 0; }
+        100% { 
+            width: 150px; 
+            opacity: 1; 
+        }
+    }
+    @-moz-keyframes rollOutHeaderUnderline {
+        0%   { width: 0; opacity: 0; }
+        100% { 
+            width: 150px; 
+            opacity: 1; 
+        }
+    }
+    @-o-keyframes rollOutHeaderUnderline {
+        0%   { width: 0; opacity: 0; }
+        100% { 
+            width: 150px; 
+            opacity: 1; 
+        }
+    }
+    @keyframes rollOutHeaderUnderline {
+        0%   { width: 0; opacity: 0; }
+        100% { 
+            width: 150px; 
+            opacity: 1; 
+        }
+    }
 }
 
 
