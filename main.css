@@ -29,6 +29,7 @@
   font-family: "Noir Pro";
   src: url("./fonts/Noir-pro/NoirPro-Light.otf");
 }
+/* Layout */
 * {
   box-sizing: border-box;
 }
@@ -156,6 +157,9 @@ html, body {
 @media (min-width: 820px) {
   .resume {
     font-size: 1em;
+  }
+  .resume .content {
+    padding-bottom: 8em;
   }
 }
 .resume::before {
@@ -523,6 +527,7 @@ html, body {
 
 .technologies {
   background-color: #272727;
+  padding-bottom: 60px;
 }
 .technologies__header {
   font-family: "Noir Pro";
@@ -589,6 +594,87 @@ html, body {
 }
 .technologies__image:hover {
   opacity: 1;
+}
+
+/* Animations */
+.hidden-before-scroll {
+  opacity: 0;
+}
+
+.displayed-on-scroll {
+  animation: fadeIn 1s ease-out;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.section-header--rolled-in::after {
+  width: 0;
+}
+.section-header--rolled-out::after {
+  animation: rollOutHeaderUnderline 0.8s cubic-bezier(0.5, 0.96, 0.52, 0.96);
+}
+
+@-webkit-keyframes rollOutHeaderUnderline {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 65%;
+  }
+}
+@-moz-keyframes rollOutHeaderUnderline {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 65%;
+  }
+}
+@-o-keyframes rollOutHeaderUnderline {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 65%;
+  }
+}
+@keyframes rollOutHeaderUnderline {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 65%;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

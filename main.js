@@ -1,11 +1,48 @@
 window.onload = () => {
-    let collapsingButtons = document.querySelectorAll('[class^=resume__icon]');
-    collapsingButtons.forEach ( (button) => {
+    addCollpaseResumeButtonsFunctionality();
+}
+
+window.onscroll = (event) => {
+    const hiddenElementClass = 'hidden-before-scroll';
+    const hiddenBeforeScrollElements = document.getElementsByClassName(hiddenElementClass);
+
+    Array.prototype.forEach.call(hiddenBeforeScrollElements, hiddenElement => {
+        let elementDistanceFromTop = hiddenElement.getBoundingClientRect().top;
+
+        if (window.scrollY >= (elementDistanceFromTop - 200)) {
+            /* change opacity on scroll */
+            const displayedElementClass = 'displayed-on-scroll';
+
+            hiddenElement.classList.toggle(hiddenElementClass);
+            hiddenElement.classList.toggle(displayedElementClass);
+        }
+    });
+
+    const sectionHeaderRolledInClass = 'section-header--rolled-in';
+    const sectionHeadersElements = document.getElementsByClassName(sectionHeaderRolledInClass);
+
+    Array.prototype.forEach.call(sectionHeadersElements, sectionHeaderElement => {
+        let elementDistanceFromTop = sectionHeaderElement.getBoundingClientRect().top;
+
+        if (window.scrollY >= (elementDistanceFromTop - 200)) {
+            /** roll out header underline */
+            const rollOutClass = 'section-header--rolled-out';
+            sectionHeaderElement.classList.toggle(sectionHeaderRolledInClass);
+            sectionHeaderElement.classList.toggle(rollOutClass);
+        }
+    })
+}
+
+const addCollpaseResumeButtonsFunctionality = () => {
+    const collapsingButtons = document.querySelectorAll('[class^=resume__icon]');
+
+    collapsingButtons.forEach ((button) => {
         button.onclick = (event) => {
             collapseResumeItem(event);
         }
     })
 }
+
 
 const collapseResumeItem = (clickEvent) => {
     const plusButtonClassName = 'resume__icon--plus-button';

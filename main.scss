@@ -45,6 +45,7 @@ $dark-bg-color: #272727;
 $light-bg-color: #4b4848;
 $white-bg-color: #fff;
 
+/* Layout */
 
 * {
     box-sizing: border-box;
@@ -178,6 +179,10 @@ $date-and-icon-top-margin: 20px;
 
     @media (min-width: $desktop-view-min-width) {
         font-size: 1em;
+
+        .content {
+            padding-bottom: 8em;
+        }
     }
 
     &::before {
@@ -598,6 +603,7 @@ $two-columns-icons: 339px;
 
 .technologies {
     background-color: $dark-bg-color;
+    padding-bottom: 60px;
 
     &__header {
         font-family: 'Noir Pro';
@@ -670,3 +676,62 @@ $two-columns-icons: 339px;
         }
     }
 }
+
+/* Animations */
+
+
+.hidden-before-scroll {
+    opacity: 0;
+}
+
+.displayed-on-scroll {
+    animation: fadeIn 1s ease-out;
+}
+
+@-webkit-keyframes fadeIn {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+@-moz-keyframes fadeIn {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+@-o-keyframes fadeIn {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes fadeIn {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+.section-header {
+    &--rolled-in::after {
+        width: 0;
+    }
+
+    &--rolled-out::after {
+        animation: rollOutHeaderUnderline .8s cubic-bezier(.5,.96,.52,.96);
+    }
+}
+
+
+
+@-webkit-keyframes rollOutHeaderUnderline {
+    0%   { width: 0; }
+    100% { width: 65%; }
+}
+@-moz-keyframes rollOutHeaderUnderline {
+    0%   { width: 0; }
+    100% { width: 65%; }
+}
+@-o-keyframes rollOutHeaderUnderline {
+    0%   { width: 0; }
+    100% { width: 65%; }
+}
+@keyframes rollOutHeaderUnderline {
+    0%   { width: 0; }
+    100% { width: 65%; }
+}
+
