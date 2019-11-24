@@ -151,6 +151,11 @@ html, body {
     &__text {
         width: 90%;
         margin: 0 auto;
+        font-size: .9em;
+
+        @media (min-width: $desktop-view-min-width) {
+            font-size: 1em;
+        }
     }
 
     &__line {
@@ -169,6 +174,11 @@ $date-and-icon-top-margin: 20px;
 .resume {
     background-color: $dark-bg-color;
     position: relative;
+    font-size: .8em;
+
+    @media (min-width: $desktop-view-min-width) {
+        font-size: 1em;
+    }
 
     &::before {
         content: "";
