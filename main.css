@@ -105,10 +105,15 @@ html, body {
 }
 .first-view__name {
   font-family: "Silk Serif";
-  font-size: 2.5em;
   font-weight: 300;
   margin: 0.25em 0;
   text-align: center;
+  font-size: 1.5em;
+}
+@media (min-width: 820px) {
+  .first-view__name {
+    font-size: 2.5em;
+  }
 }
 .first-view__profession {
   font-family: sans-serif;
@@ -281,7 +286,6 @@ html, body {
   }
 }
 .item__header {
-  font-size: 1.1em;
   display: grid;
   grid-template-columns: 90% 1fr;
 }
@@ -372,7 +376,8 @@ html, body {
 @media (max-width: 996px) {
   .projects__item--stock-exchange {
     grid-column: 1/4;
-    width: 65%;
+    width: 100%;
+    max-width: 530px;
     margin: 0 auto;
   }
 }
@@ -387,7 +392,8 @@ html, body {
 @media (max-width: 996px) {
   .projects__item--blog {
     grid-column: 1/4;
-    width: 65%;
+    width: 100%;
+    max-width: 530px;
     margin: 0 auto;
   }
 }
@@ -401,7 +407,8 @@ html, body {
 @media (max-width: 996px) {
   .projects__item--amadventure {
     grid-column: 1/4;
-    width: 65%;
+    width: 100%;
+    max-width: 530px;
     margin: 0 auto;
   }
 }
@@ -420,7 +427,8 @@ html, body {
 @media (max-width: 996px) {
   .projects__item--hosting {
     grid-column: 1/4;
-    width: 65%;
+    width: 100%;
+    max-width: 530px;
     margin: 0 auto;
   }
 }
@@ -475,8 +483,14 @@ html, body {
 .project__icon, .project__icon--hosting, .project__icon--amadventure, .project__icon--blog, .project__icon--stock-exchange {
   position: relative;
   z-index: 1;
-  height: 120px;
-  width: 120px;
+  height: 80px;
+  width: 80px;
+}
+@media (min-width: 820px) {
+  .project__icon, .project__icon--hosting, .project__icon--amadventure, .project__icon--blog, .project__icon--stock-exchange {
+    height: 120px;
+    width: 120px;
+  }
 }
 .project__icon--stock-exchange {
   background: url("./graphics/projects/bars-golden-bg.png") center center no-repeat;
@@ -499,24 +513,39 @@ html, body {
   background-color: #272727;
 }
 .technologies__header {
-  clip-path: polygon(10% 0px, 90% 0px, 83% 100%, 17% 100%);
-  height: 130px;
-  max-width: 1150px;
+  font-family: "Noir Pro";
+  color: white;
   margin: 0 auto;
-  background-color: #4b4848;
+  background-color: #272727;
   display: flex;
   align-content: center;
   align-items: center;
   justify-content: center;
+  font-size: 1.6em;
+  padding: 20px 0;
+}
+@media (min-width: 270px) {
+  .technologies__header {
+    clip-path: polygon(10% 0px, 90% 0px, 83% 100%, 17% 100%);
+    height: 60px;
+    background-color: #4b4848;
+  }
+}
+@media (min-width: 820px) {
+  .technologies__header {
+    clip-path: polygon(10% 0px, 90% 0px, 83% 100%, 17% 100%);
+    height: 130px;
+    max-width: 1150px;
+    font-size: 2.2em;
+  }
 }
 .technologies__header--text {
-  color: white;
-  font-family: "Noir Pro";
   margin: 0;
-  font-size: 2.2em;
 }
-.technologies__content {
-  padding: 80px 0;
+@media (min-width: 820px) {
+  .technologies__content {
+    padding: 80px 0;
+  }
 }
 .technologies__icons {
   width: 65%;
