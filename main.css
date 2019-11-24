@@ -100,7 +100,7 @@ html, body {
   bottom: 0;
   right: 0;
   opacity: 0.125;
-  background: url("./graphics/laptop-with-note-on-the-desk-min.jpg") center center no-repeat;
+  background: url("./graphics/first-view/laptop-and-coffee-1920x1080.jpg") center center no-repeat;
   background-size: cover;
 }
 .first-view__name {
@@ -130,6 +130,12 @@ html, body {
 .about-me__text {
   width: 90%;
   margin: 0 auto;
+  font-size: 0.9em;
+}
+@media (min-width: 820px) {
+  .about-me__text {
+    font-size: 1em;
+  }
 }
 .about-me__line {
   color: #5B5A5A;
@@ -145,6 +151,12 @@ html, body {
 .resume {
   background-color: #272727;
   position: relative;
+  font-size: 0.8em;
+}
+@media (min-width: 820px) {
+  .resume {
+    font-size: 1em;
+  }
 }
 .resume::before {
   content: "";
