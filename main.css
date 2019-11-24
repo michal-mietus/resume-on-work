@@ -153,6 +153,7 @@ html, body {
   background-color: #272727;
   position: relative;
   font-size: 0.8em;
+  padding-bottom: 2em;
 }
 @media (min-width: 820px) {
   .resume {
@@ -193,7 +194,7 @@ html, body {
 .resume__education {
   margin-top: 100px;
 }
-.resume__row, .resume__row--collapsed {
+.resume__row, .resume__row--expanded, .resume__row--collapsed {
   display: flex;
   padding: 15px 0;
 }
@@ -268,16 +269,24 @@ html, body {
   background-size: contain;
 }
 .resume__icon--plus-button {
-  margin-top: 20px;
   cursor: pointer;
   background: url("./icons/Plus Button.svg") no-repeat center;
   background-size: contain;
 }
+@media (min-width: 820px) {
+  .resume__icon--plus-button {
+    margin-top: 20px;
+  }
+}
 .resume__icon--minus-button {
-  margin-top: 20px;
   cursor: pointer;
   background: url("./icons/Minus Button.svg") no-repeat center;
   background-size: contain;
+}
+@media (min-width: 820px) {
+  .resume__icon--minus-button {
+    margin-top: 20px;
+  }
 }
 .resume__icon--desktop {
   display: none;
@@ -290,6 +299,7 @@ html, body {
 @media (min-width: 820px) {
   .resume__icon--mobile {
     display: none;
+    margin-top: 0;
   }
 }
 
@@ -674,6 +684,23 @@ html, body {
   }
   100% {
     width: 65%;
+  }
+}
+.resume__row--collapsed .item__collapsing-items {
+  max-height: 0;
+  overflow: hidden;
+}
+.resume__row--expanded .item__collapsing-items {
+  overflow: hidden;
+  animation: expand 3s ease-out;
+}
+
+@keyframes expand {
+  0% {
+    max-height: 0;
+  }
+  100% {
+    max-height: 100vh;
   }
 }
 

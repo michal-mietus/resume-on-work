@@ -1,5 +1,6 @@
 window.onload = () => {
     addCollpaseResumeButtonsFunctionality();
+    processArray('Web Developer'.split(''));
 }
 
 window.onscroll = (event) => {
@@ -48,6 +49,9 @@ const collapseResumeItem = (clickEvent) => {
     const plusButtonClassName = 'resume__icon--plus-button';
     const minusButtonClassName = 'resume__icon--minus-button';
 
+    const collapsedClass = 'resume__row--collapsed';
+    const extendedClass = 'resume__row--expanded';
+
     var parentElement = clickEvent.srcElement.parentElement;
     let classes = clickEvent.srcElement.classList;
 
@@ -57,7 +61,8 @@ const collapseResumeItem = (clickEvent) => {
             parentElement = parentElement.parentElement.parentElement.parentElement;
         } 
 
-        parentElement.classList.toggle('resume__row--collapsed');
+        parentElement.classList.toggle(collapsedClass);
+        parentElement.classList.toggle(extendedClass);
         classes.remove(plusButtonClassName);
         classes.add(minusButtonClassName);
 
@@ -66,7 +71,8 @@ const collapseResumeItem = (clickEvent) => {
             parentElement = parentElement.parentElement.parentElement.parentElement;
         }
 
-        parentElement.classList.toggle('resume__row--collapsed');
+        parentElement.classList.toggle(collapsedClass);
+        parentElement.classList.toggle(extendedClass);
         classes.remove(minusButtonClassName);
         classes.add(plusButtonClassName); 
     }
@@ -82,4 +88,20 @@ const isMobileButton = (buttonClasses) => {
     });
 
     return isMobile;
+}
+
+
+async function processArray(array) {
+    for (const item of array) {
+      await delayedLog(item);
+    }
+}
+
+async function delayedLog(item) {
+    await delay();
+    document.getElementById('first-page-subtitle').innerHTML += item;
+}
+
+function delay() {
+    return new Promise(resolve => setTimeout(resolve, 100));
 }
