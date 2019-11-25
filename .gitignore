@@ -1,6 +1,8 @@
 *.zip
 *.rar
 *.map
+test.html
+
 .sass-cache
 
 /font-screens
