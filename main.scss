@@ -222,15 +222,17 @@ $date-and-icon-top-margin: 20px;
         display: flex;
         padding: 15px 0;
 
-        &--collapsed {
-            @extend .resume__row;
-            
-            .item {
-                &__time,
-                &__sub-header,
-                &__text {
-                    display: none;
-                }
+        .item__collapsing-items {
+            flex-direction: column;
+
+            &--collapsed {
+                max-height: 0;
+                overflow: hidden;
+                padding: 0;
+            }
+
+            &--expanded {
+
             }
         }
     }
@@ -291,7 +293,7 @@ $date-and-icon-top-margin: 20px;
 
         @media (min-width: $desktop-view-min-width) {
             border: none;
-            border-radius: 10px;
+            border-radius: 6px;
         }
     }
 
@@ -786,30 +788,19 @@ $two-columns-icons: 339px;
     }
 }
 
+// TODO hardcoded height occurs something like delay in animation,
+// its scrolling from unseen area, affecting user experience
 
-// TODO extract from row
+.item__collapsing-items {
+    transition: max-height 1s cubic-bezier(.46,.48,.29,.99);
 
-.resume__row {
-    &--collapsed {
-        @extend .resume__row;
-        
-        .item__collapsing-items {
-            max-height: 0;
-            overflow: hidden;
-        }
+    &--collapsed {        
+        max-height: 0;
+        overflow: hidden;
     }
 
     &--expanded {
-        @extend .resume__row;
-        
-        .item__collapsing-items {
-            overflow: hidden;
-            animation: expand 3s ease-out;
-        }
+        overflow: hidden;
+        max-height: 200px;
     }
-}
-
-@keyframes expand {
-    0% { max-height: 0; }
-    100% { max-height: 100vh; }
 }

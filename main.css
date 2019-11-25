@@ -194,12 +194,17 @@ html, body {
 .resume__education {
   margin-top: 100px;
 }
-.resume__row, .resume__row--expanded, .resume__row--collapsed {
+.resume__row {
   display: flex;
   padding: 15px 0;
 }
-.resume__row--collapsed .item__time, .resume__row--collapsed .item__sub-header, .resume__row--collapsed .item__text {
-  display: none;
+.resume__row .item__collapsing-items {
+  flex-direction: column;
+}
+.resume__row .item__collapsing-items--collapsed {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
 }
 .resume__header {
   color: white;
@@ -254,7 +259,7 @@ html, body {
 @media (min-width: 820px) {
   .resume__item {
     border: none;
-    border-radius: 10px;
+    border-radius: 6px;
   }
 }
 .resume__icon, .resume__icon--minus-button, .resume__icon--plus-button, .resume__icon--ask-button {
@@ -737,22 +742,16 @@ html, body {
     }
   }
 }
-.resume__row--collapsed .item__collapsing-items {
+.item__collapsing-items {
+  transition: max-height 1s cubic-bezier(0.46, 0.48, 0.29, 0.99);
+}
+.item__collapsing-items--collapsed {
   max-height: 0;
   overflow: hidden;
 }
-.resume__row--expanded .item__collapsing-items {
+.item__collapsing-items--expanded {
   overflow: hidden;
-  animation: expand 3s ease-out;
-}
-
-@keyframes expand {
-  0% {
-    max-height: 0;
-  }
-  100% {
-    max-height: 100vh;
-  }
+  max-height: 200px;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -39,44 +39,49 @@ const addCollpaseResumeButtonsFunctionality = () => {
 
     collapsingButtons.forEach ((button) => {
         button.onclick = (event) => {
-            collapseResumeItem(event);
+            addCollapseAnimation(event);
         }
     })
 }
 
-
-const collapseResumeItem = (clickEvent) => {
+const addCollapseAnimation = (clickEvent) => {
     const plusButtonClassName = 'resume__icon--plus-button';
     const minusButtonClassName = 'resume__icon--minus-button';
 
-    const collapsedClass = 'resume__row--collapsed';
-    const extendedClass = 'resume__row--expanded';
+    const collapsedClass = 'item__collapsing-items--collapsed';
+    const extendedClass = 'item__collapsing-items--expanded';
 
     var parentElement = clickEvent.srcElement.parentElement;
     let classes = clickEvent.srcElement.classList;
 
+    // TODO refactor repeating code
+
     if (classes.contains(plusButtonClassName)) {
         if (isMobileButton(classes)) {
-            // TODO minimalize access to 4th parent
-            parentElement = parentElement.parentElement.parentElement.parentElement;
-        } 
+            collapsingContainer = parentElement.parentElement.querySelector('.item__collapsing-items');
+        } else {
+            collapsingContainer = parentElement.querySelector('.resume__item .item__container .item__collapsing-items');     
+        }
 
-        parentElement.classList.toggle(collapsedClass);
-        parentElement.classList.toggle(extendedClass);
+        collapsingContainer.classList.toggle(collapsedClass);
+        collapsingContainer.classList.toggle(extendedClass);
         classes.remove(plusButtonClassName);
         classes.add(minusButtonClassName);
 
     } else if (classes.contains(minusButtonClassName)) {
         if (isMobileButton(classes)) {
-            parentElement = parentElement.parentElement.parentElement.parentElement;
+            collapsingContainer = parentElement.parentElement.querySelector('.item__collapsing-items');
+        } else {
+            collapsingContainer = parentElement.querySelector('.resume__item .item__container .item__collapsing-items');     
         }
 
-        parentElement.classList.toggle(collapsedClass);
-        parentElement.classList.toggle(extendedClass);
+        collapsingContainer.classList.toggle(collapsedClass);
+        collapsingContainer.classList.toggle(extendedClass);
         classes.remove(minusButtonClassName);
         classes.add(plusButtonClassName); 
     }
 };
+
 
 const isMobileButton = (buttonClasses) => {
     var isMobile = false;
