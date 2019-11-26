@@ -271,6 +271,7 @@ $date-and-icon-top-margin: 20px;
             display: none;
 
             @media (min-width: $desktop-view-min-width) {
+                margin-top: 25px;
                 display: inline-block;
             }
         }
@@ -305,6 +306,7 @@ $date-and-icon-top-margin: 20px;
 
 
         &--ask-button {
+            opacity: 0;
             @extend .resume__icon;
             align-self: center;
             background: url('./icons/Info\ Button.svg') no-repeat center;
@@ -355,30 +357,29 @@ $date-and-icon-top-margin: 20px;
         padding: 10px 25px;
 
         @media (min-width: $desktop-view-min-width) {
-            padding: 20px 60px;
+            padding: 20px 40px;
         }
     }
 
     &__header {
         display: grid;
         grid-template-columns: 90% 1fr;
+
+        @media (min-width: $desktop-view-min-width) {
+            display: block;
+        }
     }
     
     &__time {
         font-size: .7em;
         margin: 10px 0 20px;
-        display: none;
-
-        @media (min-width: $desktop-view-min-width) {
-            display: block;
-        }
 
         &--mobile.item__time {
             display: block;
-            margin: 10px 0;
+            margin: 0 0 10px;
 
             @media (min-width: $desktop-view-min-width) {
-                display: none;
+                margin: 10px 0;
             }
         }
     }

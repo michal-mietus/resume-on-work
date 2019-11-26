@@ -238,6 +238,7 @@ html, body {
 }
 @media (min-width: 820px) {
   .resume__date--desktop {
+    margin-top: 25px;
     display: inline-block;
   }
 }
@@ -269,6 +270,7 @@ html, body {
   background-size: contain;
 }
 .resume__icon--ask-button {
+  opacity: 0;
   align-self: center;
   background: url("./icons/Info Button.svg") no-repeat center;
   background-size: contain;
@@ -313,30 +315,29 @@ html, body {
 }
 @media (min-width: 820px) {
   .item__container {
-    padding: 20px 60px;
+    padding: 20px 40px;
   }
 }
 .item__header {
   display: grid;
   grid-template-columns: 90% 1fr;
 }
-.item__time {
-  font-size: 0.7em;
-  margin: 10px 0 20px;
-  display: none;
-}
 @media (min-width: 820px) {
-  .item__time {
+  .item__header {
     display: block;
   }
 }
+.item__time {
+  font-size: 0.7em;
+  margin: 10px 0 20px;
+}
 .item__time--mobile.item__time {
   display: block;
-  margin: 10px 0;
+  margin: 0 0 10px;
 }
 @media (min-width: 820px) {
   .item__time--mobile.item__time {
-    display: none;
+    margin: 10px 0;
   }
 }
 .item__sub-header {
