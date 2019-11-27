@@ -192,7 +192,12 @@ html, body {
   }
 }
 .resume__education {
-  margin-top: 100px;
+  margin-top: 7q0px;
+}
+@media (min-width: 820px) {
+  .resume__education {
+    margin-top: 100px;
+  }
 }
 .resume__row {
   display: flex;
@@ -333,7 +338,7 @@ html, body {
 }
 .item__time--mobile.item__time {
   display: block;
-  margin: 0 0 10px;
+  margin: 5px 0 10px;
 }
 @media (min-width: 820px) {
   .item__time--mobile.item__time {

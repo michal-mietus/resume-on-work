@@ -215,7 +215,10 @@ $date-and-icon-top-margin: 20px;
     }
 
     &__education {
-        margin-top: 100px;
+        margin-top: 7q0px;
+        @media (min-width: $desktop-view-min-width) {
+            margin-top: 100px;
+        }
     }
 
     &__row {
@@ -376,7 +379,7 @@ $date-and-icon-top-margin: 20px;
 
         &--mobile.item__time {
             display: block;
-            margin: 0 0 10px;
+            margin: 5px 0 10px;
 
             @media (min-width: $desktop-view-min-width) {
                 margin: 10px 0;

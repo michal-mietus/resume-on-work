@@ -1,0 +1,27 @@
+--==-- Features --==--
+
+Website => main
+    - place somewhere logo
+
+Resume => Whole
+    - Items <- add content: headers, dates, subheaders
+
+Resume => Buttons
+    - Plus / Minus <- buttons as css shapes instead of graphics to add animations
+
+Resume => Projects
+    - Single Project View <- currently they're linking to repos, 
+        -- remake their instances of applications
+        -- design single project View
+                --- single project should including: 
+                    ---- description
+                    ---- main features
+                    ---- link to application
+                    ---- link to code repository
+                    ---- statistics retained from repo (commits etc.)
+
+
+--==-- Bugs --==--
+
+Resume => Education
+    - Mo"ś"cickiego <- 'ś' is displayed inproperly on smartphone.
