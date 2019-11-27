@@ -757,7 +757,7 @@ html, body {
 }
 .item__collapsing-items--expanded {
   overflow: hidden;
-  max-height: 200px;
+  max-height: 350px;
 }
 
 /*# sourceMappingURL=main.css.map */
